@@ -39,7 +39,7 @@ Insights from EDA guide feature engineering and model selection.
 - Radial Basis Functions to model regional seismic patterns
 - Helps capture localized tsunami risk zones
 
-## 🤖 Models Evaluated
+## Models Evaluated
 Multiple classifiers were compared under the same experimental setup:
 - Logistic Regression
 - Decision tree
@@ -55,7 +55,7 @@ Evaluation metrics:
 - F1-score, F2-score
 - Confusion Matrix
 
-## ⚙️ Hyperparameter Optimization
+## Hyperparameter Optimization
 - Grid Search on Random Forest model.
 - Optimization focused on F2-Score.
 
