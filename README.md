@@ -16,6 +16,36 @@ Data preprocessing includes:
 - Feature scaling
 - Train/validation/test splitting
 Link dataset: "https://www.kaggle.com/datasets/ahmeduzaki/global-earthquake-tsunami-risk-assessment-dataset"
+
+## Run the Dashboard
+
+Use 64-bit Python 3.13 and create a clean environment. The model artifact must
+be trained and loaded with the same scikit-learn version:
+
+```powershell
+py -3.13 -m venv .venv313
+.\.venv313\Scripts\python.exe -m pip install --upgrade pip
+.\.venv313\Scripts\python.exe -m pip install -r requirements.txt
+```
+
+## Train the Model Locally
+
+Place `earthquake_data_tsunami.csv` in the project root, open
+`models/predicting-tsunamis.ipynb` in VS Code, select the `.venv313` kernel,
+and run all cells from top to bottom. This retraining step is required because
+the checked-in model was created with an incompatible scikit-learn version.
+The notebook resolves the dataset from the project root and writes
+`models/rf_pipeline.joblib` and `models/threshold.json` there, including the
+scikit-learn version used to train the model. Start the dashboard with the same
+environment:
+
+```powershell
+.\.venv313\Scripts\streamlit.exe run app.py
+```
+
+The custom preprocessing transformers are defined in `feature_generator.py`
+so the saved pipeline can resolve them when loaded by Streamlit.
+
 ## Exploratory Data Analysis (EDA)
 Key analyses include:
 - Statistical distribution of seismic features
@@ -84,4 +114,6 @@ Final model evaluated using:
 - Recall: 0.98
 
 Results show improved recall for tsunami events while maintaining acceptable precision.
-
+## Web dashboard
+![alt text](<Screenshot 2026-10-18 140324.png>)
+![alt text](image.png)
