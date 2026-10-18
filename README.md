@@ -115,5 +115,4 @@ Final model evaluated using:
 
 Results show improved recall for tsunami events while maintaining acceptable precision.
 ## Web dashboard
-![alt text](<Screenshot 2026-10-18 140324.png>)
-![alt text](image.png)
+![alt text](image/dashboard1.png) ![alt text](image/dashboard2.png)
